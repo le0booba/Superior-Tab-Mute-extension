@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Superior Tab Muter",
+  "version": "1.1.2",
+  "description": "Advanced tab audio management - mute all tabs except selected ones with smart tab closure handling",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Superior Tab Muter - Smart Audio Control"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
