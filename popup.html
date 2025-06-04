@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superior Tab Muter</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔇 Superior Tab Muter</h1>
+            <h3>ver. 1.1.2</h3>
+            <!-- <h2>/ by _ b a d r e n t o n /</h2> -->
+            <div class="status" id="status">Loading...</div>
+        </header>
+
+        <main>
+            <section class="mode-selection">
+                <h2>Muting Mode</h2>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="mode" value="disabled" id="mode-disabled">
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <strong>Disabled</strong>
+                            <small>All tabs play normally</small>
+                        </div>
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="mode" value="active" id="mode-active">
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <strong>Active Tab Only</strong>
+                            <small>Only the currently active tab can play audio</small>
+                        </div>
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="mode" value="first_sound" id="mode-first-sound">
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <strong>First Sound Tab</strong>
+                            <small>Only the first tab that plays audio stays unmuted</small>
+                        </div>
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="mode" value="manual" id="mode-manual">
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <strong>Manual Selection</strong>
+                            <small>Choose which tab to keep unmuted</small>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <section class="first-sound-options" id="first-sound-options" style="display: none;">
+                <h3>When First Sound Tab is Closed</h3>
+                <div class="radio-group">
+                    <label class="radio-option small">
+                        <input type="radio" name="first-sound-close" value="do_nothing" id="close-do-nothing">
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <strong>Do Nothing</strong>
+                            <small>No sound will play until a new tab starts audio</small>
+                        </div>
+                    </label>
+
+                    <label class="radio-option small">
+                        <input type="radio" name="first-sound-close" value="next_sound_tab" id="close-next-sound">
+                        <span class="radio-custom"></span>
+                        <div class="radio-content">
+                            <strong>Switch to Next Sound Tab</strong>
+                            <small>Automatically enable the next tab with audio</small>
+                        </div>
+                    </label>
+                </div>
+                
+                <div class="first-sound-info" id="first-sound-info" style="display: none;">
+                    <small>Current first sound tab will be displayed here</small>
+                </div>
+            </section>
+
+            <section class="tab-selection" id="tab-selection" style="display: none;">
+                <h3>Select Tab to Keep Unmuted</h3>
+                <div class="dropdown-container">
+                    <select class="tab-dropdown" id="tab-dropdown">
+                        <option value="" disabled selected>Select a tab to keep unmuted...</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="info-panel">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Total Tabs:</span>
+                        <span class="info-value" id="total-tabs">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Playing Audio:</span>
+                        <span class="info-value" id="audible-tabs">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Muted:</span>
+                        <span class="info-value" id="muted-tabs">0</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <button class="btn-refresh" id="refresh-btn">Refresh 🔄</button>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
