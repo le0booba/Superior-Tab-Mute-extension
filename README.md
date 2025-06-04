@@ -38,3 +38,12 @@ A powerful Chrome extension for advanced tab audio management with multiple muti
 ### File Structure
 
 ```
+ superior-tab-mute/
+├── manifest.json
+├── background.js
+├── popup.html
+├── popup.js
+└── icons/
+    ├── icon16.png
+    ├── icon48.png
+    ├── icon128.png
