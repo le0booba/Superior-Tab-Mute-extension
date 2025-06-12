@@ -1,10 +1,15 @@
 # 🎧 Superior Tab Mute - Chrome Extension
 
-![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224450_result.jpg)
-
-![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224538_result.jpg)
-
-![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224424_result.jpg)
+<p align="center">
+  <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+      <img src="https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224424_result.jpg" width="243" alt="Описание 1">
+    </a>
+      <img src="https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224538_result.jpg" width="200" alt="Описание 2">
+    </a>
+      <img src="https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224450_result.jpg" width="200" alt="Описание 3">
+    </a>
+  </div>
+</p>
 
 > **Advanced control over tab audio** - Mute all tabs except the one you're focused on, the first one that made sound, or a specific tab you choose.
 
