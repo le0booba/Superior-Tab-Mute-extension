@@ -2,7 +2,9 @@
 
 A powerful Chrome extension for advanced tab audio management with multiple muting modes.
 
-[[![Текст описания]([[https://www.example.com/image.jpg](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20175402.png)](https://github.com/le0booba/Superior_Tab_Muter/blob/main/Screenshot%202025-06-12%20175402.png))](https://github.com/le0booba/Superior_Tab_Muter/blob/main/Screenshot%202025-06-12%20175402.png)](https://github.com/le0booba/Superior_Tab_Muter/blob/main/Screenshot%202025-06-12%20175402.png?raw=true)
+![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20175402_result_1.jpg)
+------
+![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20175438_result_1.jpg)
 
 ## Features
 
