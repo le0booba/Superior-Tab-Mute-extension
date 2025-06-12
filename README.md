@@ -1,16 +1,12 @@
 # Superior Tab Mute 🔇
 
-Superior Tab Mute is a powerful Chrome extension designed to give you advanced control over tab audio. It allows you to mute all tabs except the one you’re focused on, the first tab that starts playing sound, or a specific tab of your choice. With an intuitive interface and customizable settings, it ensures a distraction-free browsing experience by managing tab audio effectively.
+**Superior Tab Mute** is a powerful Chrome extension designed to give you advanced control over tab audio. It allows you to mute all tabs except the one you’re focused on, the first tab that starts playing sound, or a specific tab of your choice. With an intuitive interface and customizable settings, it ensures a distraction-free browsing experience by managing tab audio effectively.
+
 
 ![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20175402_result_1.jpg)
 ------
 ![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20175438_result_1.jpg)
 
-# Superior Tab Mute 🔇
-
-**Superior Tab Mute** is a powerful Chrome extension designed to give you advanced control over tab audio. It allows you to mute all tabs except the one you’re focused on, the first tab that starts playing sound, or a specific tab of your choice. With an intuitive interface and customizable settings, it ensures a distraction-free browsing experience by managing tab audio effectively.
-
----
 
 ## ✨ Features
 
@@ -156,7 +152,7 @@ To contribute or modify the extension:
 
 ---
 
-## 👤 Author
+- 👤 Author
 
 Developed by **badrenton**.
 
@@ -172,7 +168,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 1. Built with ❤️ for Chrome users seeking better audio control.
 2. Icons sourced from \[your-icon-source\] (update with actual source if applicable).
-
 
 
 ### File Structure
