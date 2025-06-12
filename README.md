@@ -2,11 +2,7 @@
 
 **Superior Tab Mute** is a powerful Chrome extension designed to give you advanced control over tab audio. It allows you to mute all tabs except the one you’re focused on, the first tab that starts playing sound, or a specific tab of your choice. With an intuitive interface and customizable settings, it ensures a distraction-free browsing experience by managing tab audio effectively.
 
-
-![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20175402_result_1.jpg)
-------
-![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20175438_result_1.jpg)
-
+---
 
 ## ✨ Features
 
@@ -75,70 +71,15 @@
    - In **First Sound Mode**, click **Set Active Tab as Sound Source** to designate the current tab as the sound source.
    - In **Whitelist Mode**, select a tab from the list of audible tabs to keep unmuted.
 
-4. **Access Advanced Settings**:
-
-   - Right-click the extension icon and select **Options** to configure:
-     - Auto-enable on browser startup.
-     - Preserve tab selection across sessions.
-     - Instant muting for immediate audio control.
-     - Notifications for muting/unmuting events.
-     - Backup or restore settings.
-
 ---
 
-## 📂 File Structure
+## 🖥️ Screenshots
 
-- `manifest.json`: Defines the extension's metadata, permissions, and resources.
-- `background.js`: Handles core logic for muting tabs based on the selected mode.
-- `popup.html`: The user interface for selecting modes and managing audible tabs.
-- `popup.js`: JavaScript for popup interactivity and settings management.
-- `popup.css`: Styles for the popup interface.
-- `options.html`: Interface for advanced settings configuration.
-- `icons/`: Contains extension icons (16x16, 48x48, 128x128).
+![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224450_result.jpg)
 
----
+![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224538_result.jpg)
 
-## 🔐 Permissions
-
-The extension requires the following permissions:
-
-- **tabs**: To monitor and control tab audio states.
-- **storage**: To save user preferences and settings.
-
----
-
-## 🛠️ Development
-
-To contribute or modify the extension:
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your-username/superior-tab-mute.git
-   ```
-
-2. **Make Changes**:
-
-   - Edit the JavaScript, HTML, or CSS files as needed.
-   - Ensure compatibility with Chrome’s Manifest V3.
-
-3. **Test the Extension**:
-
-4. Load the updated extension in Chrome using **Load unpacked** in `chrome://extensions/`.
-
-   - Test all modes and settings to ensure functionality.
-
-5. **Submit a Pull Request**:
-
-   - Push your changes to a fork and submit a pull request for review.
-
----
-
-## 📝 Notes
-
-- The extension automatically saves settings, so no manual saving is required.
-- If a selected tab is closed, the extension intelligently reassigns the sound source to another audible tab or the active tab.
-- For issues or feature requests, please open an issue on the repository.
+![Текст описания](https://swrxa0dme81ptwbk.public.blob.vercel-storage.com/Screenshot%202025-06-12%20224424_result.jpg)
 
 ---
 
@@ -156,21 +97,19 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## 🙌 Acknowledgments
 
-1. Built with ❤️ for Chrome users seeking better audio control.
-2. Icons sourced from \[your-icon-source\] (update with actual source if applicable).
+Built with ❤️ for Chrome users seeking better audio control.
 
-
-### File Structure
+## 📂 File Structure
 
 ```
 superior-tab-mute/
-├── background.js
-├── manifest.json
-├── popup.css
-├── popup.html
-├── popup.js
+├── background.js: Handles core logic for muting tabs based on the selected mode.
+├── manifest.json: Defines the extension's metadata, permissions, and resources.
+├── popup.css: Styles for the popup interface.
+├── popup.html: The user interface for selecting modes and managing audible tabs.
+├── popup.js: JavaScript for popup interactivity and settings management.
 ├── README.md
-└── icons/
+└── icons/: Contains extension icons (16x16, 48x48, 128x128).
     ├── icon16.png
     ├── icon48.png
     ├── icon128.png
