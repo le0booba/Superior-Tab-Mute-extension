@@ -1,11 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Superior Tab Mute",
-  "version": "1.1.2",
-  "description": "Advanced tab audio management - mute all tabs except selected ones with smart tab closure handling",
+  "version": "1.3",
+  "description": "Advanced control over tab audio. Mute all tabs except the one you're focused on, the first one that made sound, or a specific tab you choose.",
   "permissions": [
     "tabs",
-    "activeTab",
     "storage"
   ],
   "background": {
@@ -13,7 +12,11 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Superior Tab Muter - Smart Audio Control"
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "icons": {
     "16": "icons/icon16.png",
