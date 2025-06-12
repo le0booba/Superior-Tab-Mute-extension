@@ -107,16 +107,6 @@ The extension requires the following permissions:
 
 ---
 
-## 🖥️ Screenshots
-
-*Popup Interface*
-
-![Popup Interface](screenshots/popup.png)*Options Page*
-
-![Options Page](screenshots/options.png)*(Note: Replace* `screenshots/popup.png` *and* `screenshots/options.png` *with actual screenshot files in your repository.)*
-
----
-
 ## 🛠️ Development
 
 To contribute or modify the extension:
