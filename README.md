@@ -47,3 +47,11 @@ superior-tab-mute/
 ## 📄 License
 
 MIT License. See [LICENSE](LICENSE) for details.
+
+<div align="center">
+
+**🛠️ Built by [badrenton](https://github.com/badrenton) | ⚡ Keep your audio under control**
+
+*If you find this extension helpful, please consider giving it a ⭐ star on GitHub!*
+
+</div>
