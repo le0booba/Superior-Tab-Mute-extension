@@ -51,6 +51,7 @@ MIT License.
 <div align="center">
 
 **Built by [badrenton](https://github.com/badrenton) | Made with ❤️ for productivity enthusiasts**
+<br>
 *If you find this extension helpful, please consider giving it a ⭐ star on GitHub!*
 
 </div>
