@@ -50,8 +50,7 @@ MIT License.
 
 <div align="center">
 
-**🛠️ Built by [badrenton](https://github.com/badrenton) | ⚡ Keep your audio under control**
-
+**Built by [badrenton](https://github.com/badrenton) | Made with ❤️ for productivity enthusiasts**
 *If you find this extension helpful, please consider giving it a ⭐ star on GitHub!*
 
 </div>
