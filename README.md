@@ -1,4 +1,4 @@
-# Superior Tab Mute
+# Superior Tab Mute - Chrome extension
 
 > Advanced control over tab audio in Chrome. Mute all tabs except the one you're focused on, the first one that made sound, or a specific tab you choose.
 
