@@ -52,7 +52,9 @@
 2. **Enable the Master Toggle** if it's not already on
 3. **Choose your preferred muting mode** from the four available options
 
-### Mode Details
+<details><summary>Mode Details</summary>
+
+   ### Mode Details
 
 #### 🎯 **Active Tab Mode**
 - **Automatic operation** - No setup required
@@ -73,6 +75,19 @@
 - **Selective muting** - Mute only specific unwanted tabs
 - **Flexible control** - All other tabs remain unmuted
 - **Use case**: Perfect for silencing ads while keeping multiple audio sources
+
+### Advanced Features
+
+#### 🔇 **Emergency Controls**
+- **Mute All Toggle** - Instantly silence all tabs regardless of mode
+- **Master Toggle** - Completely disable the extension when needed
+
+#### 📋 **Configuration Management**
+- **Export Lists** - Save your whitelist/blacklist settings as a JSON file
+- **Import Lists** - Restore previously saved configurations
+- **Use case**: Backup settings or share configurations across devices
+
+</details>
 
 ### Advanced Features
 
@@ -107,6 +122,8 @@ superior-tab-mute/
 - **`popup.html/css/js`** - The extension's user interface with dark theme and intuitive controls
 - **`manifest.json`** - Defines extension capabilities, permissions (tabs, storage, downloads)
 
+<details><summary>🔧 Technical Details</summary>
+
 ## 🔧 Technical Details
 
 ### Permissions Required
@@ -123,6 +140,8 @@ superior-tab-mute/
 - **Efficient** - Only processes audible tabs
 - **Responsive** - Instant audio control with no delays
 
+</details>
+
 ## 🐛 Troubleshooting
 
 ### Common Issues
@@ -135,6 +154,8 @@ superior-tab-mute/
 If you encounter issues, you can reset by:
 1. Disabling and re-enabling the extension
 2. Or removing and reinstalling the extension
+
+<details><summary>🤝 Contributing</summary>
 
 ## 🤝 Contributing
 
@@ -154,6 +175,8 @@ We welcome contributions! Here's how you can help:
 - Make your changes
 - Test thoroughly
 - Submit a pull request
+
+</details>
 
 ## 📄 License
 
