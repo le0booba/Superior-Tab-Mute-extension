@@ -1,11 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Superior Tab Mute",
-  "version": "1.3",
-  "description": "Advanced control over tab audio. Mute all tabs except the one you're focused on, the first one that made sound, or a specific tab you choose.",
+  "version": "1.4",
+  "description": "Advanced control over tab audio. Mute all tabs except the one you're focused on, the first one that made sound, or a specific tab you choose. Supports blacklist/whitelist modes, mute all/unmute all, and export/import lists.",
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "downloads"
   ],
   "background": {
     "service_worker": "background.js"

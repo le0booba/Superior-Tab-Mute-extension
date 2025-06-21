@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superior Tab Mute</title>
     <link rel="stylesheet" href="popup.css">
 </head>
@@ -13,40 +15,52 @@
                 <span id="author-info">by badrenton</span>
             </div>
         </div>
-        
+
         <label class="toggle-switch">
-            <input type="checkbox" id="master-toggle-switch" checked>
+            <input type="checkbox" id="master-toggle-switch">
             <span class="slider"></span>
+            <span class="toggle-label">Master Toggle</span>
         </label>
 
         <div id="controls-wrapper">
+            <label class="toggle-switch">
+                <input type="checkbox" id="mute-all-toggle-switch">
+                <span class="slider"></span>
+                <span class="toggle-label">Mute All Tabs</span>
+            </label>
+
             <form id="mode-form">
                 <label>
-                    <input type="radio" name="mode" value="active" checked>
+                    <input type="radio" name="mode" value="active">
                     Mute all except active tab
                 </label>
-                <br>
                 <label>
                     <input type="radio" name="mode" value="first-sound">
                     Mute all except first tab with sound
                 </label>
-                <br>
                 <label>
                     <input type="radio" name="mode" value="whitelist">
                     Mute all except a specific tab
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="blacklist">
+                    Mute only a specific tab
                 </label>
             </form>
 
             <div id="first-sound-controls" class="hidden">
                 <button id="refresh-first-sound-btn">Set Active Tab as Sound Source</button>
-                <div id="current-sound-source-display"></div>
+                <div id="current-sound-source-display">No sound source designated.</div>
             </div>
 
             <div id="whitelist-section" class="hidden">
-                <h4>Select a Tab to Unmute:</h4>
+                <h4>Select a Tab to Unmute/Mute:</h4>
                 <ul id="audible-tabs-list">
                     <li class="no-sound">No tabs are currently playing sound.</li>
                 </ul>
+                <button id="export-list-btn">Export List</button>
+                <input type="file" id="import-list-input" accept=".json" style="display: none;">
+                <button onclick="document.getElementById('import-list-input').click();">Import List</button>
             </div>
         </div>
     </div>
