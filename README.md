@@ -51,6 +51,9 @@
 1. **Click the extension icon** 🎧 in your browser toolbar
 2. **Enable the Master Toggle** if it's not already on
 3. **Choose your preferred muting mode** from the four available options
+- Use hotkeys:
+  - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> — Toggle extension on/off
+  - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> — Toggle mute all tabs
 
 <details><summary>Mode Details</summary>
 
@@ -156,29 +159,6 @@ superior-tab-mute/
 If you encounter issues, you can reset by:
 1. Disabling and re-enabling the extension
 2. Or removing and reinstalling the extension
-
-</details>
-
-<details><summary>🤝 Contributing</summary>
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Bug Reports
-- Use GitHub Issues to report bugs
-- Include your Chrome version and extension version
-- Describe steps to reproduce the issue
-
-### Feature Requests
-- Suggest new muting modes or UI improvements
-- Explain your use case and why it would be helpful
-
-### Development
-- Fork the repository
-- Make your changes
-- Test thoroughly
-- Submit a pull request
 
 </details>
 
