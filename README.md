@@ -22,7 +22,7 @@
 
 ## 🎮 How to Use
 
-- Click the extension icon 🎧 in your browser toolbar
+- Click the extension icon in your browser toolbar
 - Enable the **Master Toggle**
 - Choose your preferred muting mode
 - Use the **Mute All Tabs** switch for emergency silence
@@ -46,7 +46,7 @@ superior-tab-mute/
 
 ## 📄 License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT License.
 
 <div align="center">
 
