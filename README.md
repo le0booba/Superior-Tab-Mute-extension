@@ -27,7 +27,7 @@
 - Choose your preferred muting mode
 - Use the **Mute All Tabs** switch for emergency silence
 - Use hotkeys:
-  - <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> — Toggle extension on/off
+  - <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> — Toggle extension on/off
   - <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> — Toggle mute all tabs
 
 > ⚠️ **Note:** If the default hotkeys do not work, open `chrome://extensions/shortcuts` and set them manually. Chrome may not assign them automatically if the combination is already in use or not supported by your OS.
