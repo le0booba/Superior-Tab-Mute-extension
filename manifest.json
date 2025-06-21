@@ -26,7 +26,7 @@
   "commands": {
     "toggle-extension": {
       "suggested_key": {
-        "default": "Alt+Shift+L"
+        "default": "Alt+Shift+S"
       },
       "description": "Toggle extension on/off"
     },

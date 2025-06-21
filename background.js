@@ -99,18 +99,39 @@ chrome.tabs.onRemoved.addListener(async (tabId) => {
 chrome.storage.onChanged.addListener(applyMutingRules);
 
 // --- ICON ---
-function updateExtensionIcon(isEnabled) {
-    const path = isEnabled
-        ? {16: 'icons/icon16.png',48: 'icons/icon48.png',128: 'icons/icon128.png'}
-        : {16: 'icons/icon16_off.png',48: 'icons/icon48_off.png',128: 'icons/icon128_off.png'};
+function updateExtensionIcon(isEnabled, isAllMuted) {
+    let path;
+    if (!isEnabled) {
+        path = {
+            16: 'icons/icon16_off.png',
+            48: 'icons/icon48_off.png',
+            128: 'icons/icon128_off.png'
+        };
+    } else if (isAllMuted) {
+        path = {
+            16: 'icons/icon16_mute.png',
+            48: 'icons/icon48_mute.png',
+            128: 'icons/icon128_mute.png'
+        };
+    } else {
+        path = {
+            16: 'icons/icon16.png',
+            48: 'icons/icon48.png',
+            128: 'icons/icon128.png'
+        };
+    }
     chrome.action.setIcon({ path });
 }
-chrome.storage.sync.get('isExtensionEnabled', ({ isExtensionEnabled }) => {
-    updateExtensionIcon(isExtensionEnabled !== false);
+
+chrome.storage.sync.get(['isExtensionEnabled', 'isAllMuted'], ({ isExtensionEnabled, isAllMuted }) => {
+    updateExtensionIcon(isExtensionEnabled !== false, isAllMuted === true);
 });
+
 chrome.storage.onChanged.addListener((changes, area) => {
-    if (area === 'sync' && changes.isExtensionEnabled) {
-        updateExtensionIcon(changes.isExtensionEnabled.newValue !== false);
+    if (area === 'sync' && (changes.isExtensionEnabled || changes.isAllMuted)) {
+        chrome.storage.sync.get(['isExtensionEnabled', 'isAllMuted'], ({ isExtensionEnabled, isAllMuted }) => {
+            updateExtensionIcon(isExtensionEnabled !== false, isAllMuted === true);
+        });
     }
 });
 
