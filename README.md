@@ -142,6 +142,8 @@ superior-tab-mute/
 
 </details>
 
+<details><summary>🐛 Troubleshooting</summary>
+
 ## 🐛 Troubleshooting
 
 ### Common Issues
@@ -154,6 +156,8 @@ superior-tab-mute/
 If you encounter issues, you can reset by:
 1. Disabling and re-enabling the extension
 2. Or removing and reinstalling the extension
+
+</details>
 
 <details><summary>🤝 Contributing</summary>
 
