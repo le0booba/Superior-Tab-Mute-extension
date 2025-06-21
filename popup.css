@@ -2,13 +2,11 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     width: 260px;
-    background-color: #2c3e50;
+    background: #2c3e50;
     color: #ecf0f1;
 }
 
-.container {
-    padding: 10px;
-}
+.container { padding: 10px; }
 
 /* --- UPDATED: Header and App Info Styling --- */
 .header {
@@ -17,14 +15,8 @@ body {
     align-items: center;
     margin-bottom: 4px;
     font-size: 9px;
-    font-weight: normal;
 }
-
-h3 {
-    margin: 0;
-    padding: 0;
-    border-bottom: none;
-}
+h3 { margin: 0; padding: 0; }
 
 /* NEW: Container for version and author info */
 .app-info {
@@ -43,7 +35,7 @@ h3 {
 /* NEW: Styling for the author credit */
 #author-info {
     font-size: 14px;
-    color: #7f8c8d; /* Use a slightly different shade for visual hierarchy */
+    color: #7f8c8d;
 }
 
 /* Toggle Switch Styling */
@@ -51,7 +43,6 @@ h3 {
     position: relative;
     display: inline-flex;
     align-items: center;
-    width: auto;
     height: 22px;
     margin-bottom: 12px;
 }
@@ -61,7 +52,7 @@ h3 {
     cursor: pointer; 
     width: 40px; 
     height: 22px; 
-    background-color: #555; 
+    background: #555; 
     transition: .4s; 
     border-radius: 22px; 
 }
@@ -72,57 +63,45 @@ h3 {
     width: 16px; 
     left: 3px; 
     bottom: 3px; 
-    background-color: white; 
+    background: #fff; 
     transition: .4s; 
     border-radius: 50%; 
 }
-input:checked + .slider { background-color: #3498db; }
+input:checked + .slider { background: #3498db; }
 input:checked + .slider:before { transform: translateX(18px); }
-.toggle-label {
-    margin-left: 8px;
-    font-size: 14px;
-    color: #ecf0f1;
-}
+.toggle-label { margin-left: 8px; font-size: 14px; color: #ecf0f1; }
 
 /* Disabled State for Controls */
-#controls-wrapper.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-}
+#controls-wrapper.disabled { opacity: 0.5; pointer-events: none; }
 
 /* General Controls Wrapper */
-#controls-wrapper {
-    border-top: 1px solid #34495e;
-    padding-top: 12px;
-}
+#controls-wrapper { border-top: 1px solid #34495e; padding-top: 12px; }
 
 form label { display: block; margin-bottom: 8px; cursor: pointer; }
 input[type="radio"] { margin-right: 8px; vertical-align: middle; accent-color: #3498db; }
 
-#first-sound-controls.hidden, #whitelist-section.hidden { display: none; }
+#first-sound-controls.hidden { display: none; }
 
-#refresh-first-sound-btn, #export-list-btn, button[onclick*="import-list-input"] { 
+#refresh-first-sound-btn { 
     width: 100%; 
     padding: 8px 12px; 
     font-size: 14px; 
-    color: #ffffff; 
-    background-color: #40739e; 
+    color: #fff; 
+    background: #40739e; 
     border: none; 
     border-radius: 4px; 
     cursor: pointer; 
     text-align: center; 
-    transition: background-color 0.2s ease; 
+    transition: background 0.2s; 
     margin-top: 8px; 
 }
-#refresh-first-sound-btn:hover, #export-list-btn:hover, button[onclick*="import-list-input"]:hover { 
-    background-color: #5a8ac6; 
-}
+#refresh-first-sound-btn:hover { background: #5a8ac6; }
 
 /* First Sound Display Box */
 #current-sound-source-display {
     margin-top: 10px;
     padding: 8px 10px;
-    background-color: #34495e;
+    background: #34495e;
     border-radius: 4px;
     font-size: 12px;
     color: #bdc3c7;
@@ -131,20 +110,14 @@ input[type="radio"] { margin-right: 8px; vertical-align: middle; accent-color: #
     text-overflow: ellipsis;
     min-height: 16px;
 }
-#current-sound-source-display.active {
-    color: #ecf0f1;
-    font-weight: 500;
-}
-#current-sound-source-display.error {
-    color: #e74c3c;
-}
+#current-sound-source-display.active { color: #ecf0f1; font-weight: 500; }
+#current-sound-source-display.error { color: #e74c3c; }
 
 /* Whitelist Section */
 h4 { margin-top: 12px; padding-bottom: 6px; margin-bottom: 10px; }
 #audible-tabs-list { list-style: none; padding: 0; margin: 0; max-height: 150px; overflow-y: auto; border: 1px solid #34495e; border-radius: 4px; }
-#audible-tabs-list li { padding: 8px 12px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background-color 0.2s ease, color 0.2s ease; border-bottom: 1px solid #34495e; }
+#audible-tabs-list li { padding: 8px 12px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background 0.2s, color 0.2s; border-bottom: 1px solid #34495e; }
 #audible-tabs-list li:last-child { border-bottom: none; }
-#audible-tabs-list li:hover { background-color: #4a637d; }
-#audible-tabs-list li.selected { background-color: #3498db; font-weight: bold; color: #ffffff; border-color: #3498db; }
-.no-sound { font-style: italic; color: #95a5a6; cursor: default !important; padding: 8px 12px; border-bottom: none !important; }
-.no-sound:hover { background-color: transparent !important; }
+#audible-tabs-list li:hover { background: #4a637d; }
+#audible-tabs-list li.selected { background: #3498db; font-weight: bold; color: #fff; border-color: #3498db; }
+.no-sound { font-style: italic; color: #95a5a6; cursor: default !important; padding: 8px 12px; border-bottom: none !important; background: none !important; }
