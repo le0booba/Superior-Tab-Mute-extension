@@ -48,6 +48,8 @@ superior-tab-mute/
 
 MIT License.
 
+---
+
 <div align="center">
 
 **Built by [badrenton](https://github.com/badrenton) | Made with ❤️ for productivity enthusiasts**
