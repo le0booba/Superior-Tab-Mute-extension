@@ -26,7 +26,7 @@ A Chrome extension for advanced audio control, allowing users to manage tab audi
 
 1. **Download the Extension**:
    - Clone the repository: `git clone https://github.com/badrenton/Superior_Tab_Mute.git`
-   - Or download the ZIP file from the [GitHub releases page](https://github.com/badrenton/Superior_Tab_Mute/releases).
+   - Or download the ZIP file from the [GitHub releases page](https://github.com/le0booba/Superior_Tab_Mute/releases).
 
 2. **Load in Chrome**:
    - Open Chrome and navigate to `chrome://extensions/`.
