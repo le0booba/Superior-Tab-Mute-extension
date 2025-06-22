@@ -12,11 +12,30 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 4px;
     font-size: 9px;
 }
-h3 { margin: 0; padding: 0; }
+.header-icon-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+.muting-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ecf0f1;
+    text-align: center;
+}
 
 /* NEW: Container for version and author info */
 .app-info {
@@ -36,6 +55,17 @@ h3 { margin: 0; padding: 0; }
 #author-info {
     font-size: 14px;
     color: #7f8c8d;
+}
+
+/* Уменьшить подпись под иконкой */
+.muting-mode-title {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+    color: #b2dfdb;
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 
 /* Toggle Switch Styling */
@@ -121,3 +151,9 @@ h4 { margin-top: 12px; padding-bottom: 6px; margin-bottom: 10px; }
 #audible-tabs-list li:hover { background: #4a637d; }
 #audible-tabs-list li.selected { background: #3498db; font-weight: bold; color: #fff; border-color: #3498db; }
 .no-sound { font-style: italic; color: #95a5a6; cursor: default !important; padding: 8px 12px; border-bottom: none !important; background: none !important; }
+
+/* Добавлен отступ между header и Master Toggle */
+.header + div[style] {
+    /* Этот селектор для инлайнового div, добавленного в popup.html */
+    height: 8px;
+}

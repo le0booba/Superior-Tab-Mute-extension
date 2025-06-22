@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const controlsWrapper = qs('#controls-wrapper');
     const currentSoundSourceDisplay = qs('#current-sound-source-display');
     const muteAllToggle = qs('#mute-all-toggle-switch');
-    let whitelistSection = null, audibleTabsList = null;
+    const showAllTabsFirstSound = document.getElementById('show-all-tabs-first-sound');
+    let whitelistSection = null, audibleTabsList = null, whitelistShowAllCheckbox = null;
     const manifest = chrome.runtime.getManifest();
     versionInfo.textContent = `${manifest.name} v${manifest.version}`;
     const getStorage = keys => new Promise(r => chrome.storage.sync.get(keys, r));
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (firstAudibleTabId) {
             try {
                 const tab = await chrome.tabs.get(firstAudibleTabId);
-                currentSoundSourceDisplay.textContent = `Source: ${tab.title}`;
+                currentSoundSourceDisplay.textContent = `SOURCE: ${tab.title}`;
                 currentSoundSourceDisplay.classList.add('active');
             } catch {
                 currentSoundSourceDisplay.textContent = 'Source tab has been closed.';
@@ -40,16 +41,38 @@ document.addEventListener('DOMContentLoaded', () => {
             h4.textContent = 'Select a Tab to Unmute:';
             audibleTabsList = document.createElement('ul');
             audibleTabsList.id = 'audible-tabs-list';
-            whitelistSection.append(h4, audibleTabsList);
+            whitelistShowAllCheckbox = document.createElement('label');
+            whitelistShowAllCheckbox.style.fontSize = '13px';
+            whitelistShowAllCheckbox.style.display = 'block';
+            whitelistShowAllCheckbox.style.marginTop = '8px'; // Добавлен отступ сверху
+            whitelistShowAllCheckbox.innerHTML = `<input type="checkbox" id="show-all-tabs-whitelist"> Show all tabs`;
+            whitelistSection.append(h4, audibleTabsList, whitelistShowAllCheckbox);
             controlsWrapper.appendChild(whitelistSection);
             const { whitelistedTabId } = await getStorage('whitelistedTabId');
-            populateAudibleTabs(whitelistedTabId);
-        } else if (mode === 'first-sound') updateFirstSoundDisplay();
+            const showAll = localStorage.getItem('showAllTabsWhitelist') === 'true';
+            whitelistShowAllCheckbox.querySelector('input').checked = showAll;
+            populateAudibleTabs(whitelistedTabId, showAll);
+            whitelistShowAllCheckbox.querySelector('input').onchange = (e) => {
+                localStorage.setItem('showAllTabsWhitelist', e.target.checked);
+                populateAudibleTabs(whitelistedTabId, e.target.checked);
+            };
+        } else if (mode === 'first-sound') {
+            const showAll = localStorage.getItem('showAllTabsFirstSound') === 'true';
+            showAllTabsFirstSound.checked = showAll;
+            updateFirstSoundDisplay();
+            populateFirstSoundTabs(showAll);
+            showAllTabsFirstSound.onchange = (e) => {
+                localStorage.setItem('showAllTabsFirstSound', e.target.checked);
+                populateFirstSoundTabs(e.target.checked);
+            };
+        }
     }
-    async function populateAudibleTabs(selectedTabId) {
+    async function populateAudibleTabs(selectedTabId, showAll = false) {
         if (!audibleTabsList) return;
-        const tabs = await chrome.tabs.query({ audible: true });
-        audibleTabsList.innerHTML = tabs.length ? '' : '<li class="no-sound">No tabs are currently playing sound.</li>';
+        const tabs = showAll
+            ? await chrome.tabs.query({})
+            : await chrome.tabs.query({ audible: true });
+        audibleTabsList.innerHTML = tabs.length ? '' : '<li class="no-sound">No tabs found.</li>';
         tabs.forEach(tab => {
             const li = document.createElement('li');
             li.textContent = tab.title;
@@ -61,6 +84,52 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.classList.add('selected');
             };
             audibleTabsList.appendChild(li);
+        });
+    }
+    async function populateFirstSoundTabs(showAll = false) {
+        let list = document.getElementById('first-sound-tabs-list');
+        if (!list) {
+            list = document.createElement('ul');
+            list.id = 'first-sound-tabs-list';
+            // Стилизация списка вкладок как в whitelist
+            list.style.marginTop = '8px';
+            list.style.listStyle = 'none';
+            list.style.padding = '0';
+            list.style.maxHeight = '120px';
+            list.style.overflowY = 'auto';
+            list.style.border = '1px solid #34495e';
+            list.style.borderRadius = '4px';
+            currentSoundSourceDisplay.parentNode.insertBefore(list, currentSoundSourceDisplay.nextSibling);
+        }
+        const { firstAudibleTabId } = await getStorage('firstAudibleTabId');
+        const tabs = showAll
+            ? await chrome.tabs.query({})
+            : await chrome.tabs.query({ audible: true });
+        list.innerHTML = tabs.length ? '' : '<li class="no-sound">No tabs found.</li>';
+        tabs.forEach((tab, idx) => {
+            const li = document.createElement('li');
+            li.textContent = tab.title;
+            li.dataset.tabId = tab.id;
+            // Стилизация элементов списка как в whitelist
+            li.style.padding = '8px 12px';
+            li.style.cursor = 'pointer';
+            li.style.whiteSpace = 'nowrap';
+            li.style.overflow = 'hidden';
+            li.style.textOverflow = 'ellipsis';
+            li.style.transition = 'background 0.2s, color 0.2s';
+            li.style.borderBottom = '1px solid #34495e';
+            if (idx === tabs.length - 1) li.style.borderBottom = 'none';
+            if (tab.id === firstAudibleTabId) {
+                li.style.background = '#3498db';
+                li.style.fontWeight = 'bold';
+                li.style.color = '#fff';
+            }
+            li.onclick = async () => {
+                await setStorage({ firstAudibleTabId: tab.id });
+                populateFirstSoundTabs(showAll);
+                updateFirstSoundDisplay();
+            };
+            list.appendChild(li);
         });
     }
     getStorage(['mode', 'whitelistedTabId', 'isExtensionEnabled', 'isAllMuted']).then(data => {
@@ -86,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeTab) {
             await setStorage({ firstAudibleTabId: activeTab.id });
             await updateFirstSoundDisplay();
+            if (showAllTabsFirstSound.checked) populateFirstSoundTabs(true);
         }
     };
     muteAllToggle.onchange = e => setStorage({ isAllMuted: e.target.checked });

@@ -1,7 +1,4 @@
-# Superior Tab Mute
-### Chrome extension
-
----
+# 🎧 Superior Tab Mute
 
 > Advanced control over tab audio in Chrome. Mute all tabs except the one you're focused on, the first one that made sound, or a specific tab you choose.
 
@@ -25,12 +22,12 @@
 
 ## 🎮 How to Use
 
-- Click the extension icon in your browser toolbar
+- Click the extension icon 🎧 in your browser toolbar
 - Enable the **Master Toggle**
 - Choose your preferred muting mode
 - Use the **Mute All Tabs** switch for emergency silence
 - Use hotkeys:
-  - <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> — Toggle extension on/off
+  - <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> — Toggle extension on/off
   - <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> — Toggle mute all tabs
 
 > ⚠️ **Note:** If the default hotkeys do not work, open `chrome://extensions/shortcuts` and set them manually. Chrome may not assign them automatically if the combination is already in use or not supported by your OS.
@@ -49,14 +46,4 @@ superior-tab-mute/
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
-
----
-
-<div align="center">
-
-**Built by [badrenton](https://github.com/badrenton) | Made with ❤️ for productivity enthusiasts**
-<br>
-*If you find this extension helpful, please consider giving it a ⭐ star on GitHub!*
-
-</div>
+MIT License. See [LICENSE](LICENSE) for details.

@@ -9,12 +9,25 @@
 <body>
     <div class="container">
         <div class="header">
-            <h3>Muting Mode</h3>
+            <div class="header-icon-title">
+                <span class="muting-icon" aria-label="Headphones" title="Muting Mode">
+                    <!-- SVG-иконка наушников -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="12" fill="#27ae60"/>
+                        <path d="M6 17v-2a6 6 0 0 1 12 0v2" stroke="#fff" stroke-width="2" fill="none"/>
+                        <rect x="4" y="15" width="4" height="6" rx="2" fill="#fff"/>
+                        <rect x="16" y="15" width="4" height="6" rx="2" fill="#fff"/>
+                    </svg>
+                </span>
+            </div>
             <div class="app-info">
                 <span id="version-info"></span>
                 <span id="author-info">by badrenton</span>
+                <a id="github-link" href="https://github.com/le0booba/Superior_Tab_Mute" target="_blank" style="font-size:13px;color:#2980b9;text-decoration:underline;margin-top:2px;">Page on GitHub</a>
             </div>
         </div>
+        <!-- Добавлен отступ между header и Master Toggle -->
+        <div style="height:8px;"></div>
         <label class="toggle-switch">
             <input type="checkbox" id="master-toggle-switch">
             <span class="slider"></span>
@@ -32,8 +45,17 @@
                 <label><input type="radio" name="mode" value="whitelist">Mute all except a specific tab</label>
             </form>
             <div id="first-sound-controls" class="hidden">
-                <button id="refresh-first-sound-btn">Set Active Tab as Sound Source</button>
+                <button id="refresh-first-sound-btn">
+                    <span style="font-size:15px;vertical-align:middle;">🎵</span>
+                    <span style="vertical-align:middle;">CURRENT Tab 🡪 SOURCE</span>
+                </button>
                 <div id="current-sound-source-display">No sound source designated.</div>
+                <div style="margin-top:8px;">
+                    <label style="font-size:13px;">
+                        <input type="checkbox" id="show-all-tabs-first-sound">
+                        Show all tabs
+                    </label>
+                </div>
             </div>
         </div>
     </div>
