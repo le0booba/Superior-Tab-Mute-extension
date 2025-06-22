@@ -152,8 +152,8 @@ Superior_Tab_Mute/
 
 This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
 
-© 2025 badrenton
+`` © 2025 badrenton ``
 
 <p align="center">
-⭐ Enjoying the extension? Consider giving it a star!
+<sup>⭐ Enjoying the extension? Consider giving it a star!</sup>
 </p>
