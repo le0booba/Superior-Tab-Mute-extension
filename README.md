@@ -2,13 +2,6 @@
 
 A Chrome extension for advanced audio control, allowing users to manage tab audio with precision by muting all tabs except the active tab, the first tab with sound, or a specific chosen tab.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Chrome-v100%2B-blue?logo=google-chrome&logoColor=white" alt="Chrome Version">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
-  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained">
-  <img src="https://img.shields.io/badge/version-1.5.4-orange" alt="Version 1.5.4">
-</p>
-
 ---
 
 ## ✨ Features
