@@ -120,9 +120,6 @@ A Chrome extension for advanced audio control, allowing users to manage tab audi
 
 ## 📂 File Structure
 
-<details>
-<summary>Click to view project files</summary>
-
 ```
 Superior_Tab_Mute/
 ├── background.js        # Service worker for audio management and event handling
@@ -143,8 +140,6 @@ Superior_Tab_Mute/
 ├── README.md            # Project documentation
 └── LICENSE.md           # The MIT software license
 ```
-
-</details>
 
 ---
 
