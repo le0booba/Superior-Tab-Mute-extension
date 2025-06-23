@@ -110,8 +110,7 @@ Superior-Tab-Mute-extension/
 │   ├── icon16_mute.png
 │   ├── icon48_mute.png
 │   └── icon128_mute.png
-├── README.md            # Project documentation
-└── LICENSE.md           # The MIT software license
+└── README.md            # Project documentation
 ```
 
 ---
