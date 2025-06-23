@@ -1,120 +1,100 @@
 # Superior Tab Mute
 
-A Chrome extension for advanced audio control, allowing users to manage tab audio with precision by muting all tabs except the active tab, the first tab with sound, or a specific chosen tab.
+A Chrome extension for advanced tab audio control: mute all tabs except the active tab, the first tab with sound, or a specific tab you choose.
 
 ---
 
 ## ✨ Features
 
-- **Selective Muting**: Mute all tabs except the active tab, the first tab that plays sound, or a specific tab.
-- **Blacklist/Whitelist Modes**: Mute or unmute tabs based on user-defined preferences.
-- **Toggle Controls**: Enable/disable the extension or mute all tabs with hotkeys (`Alt+Shift+S`, `Alt+Shift+M`).
-- **Dynamic UI**: Displays current sound source and allows tab selection in whitelist mode.
-- **Icon Feedback**: Visual indication of extension status (enabled, disabled, or all muted).
-- **Persistent Settings**: Uses Chrome’s `storage.sync` for saving user preferences.
+- **Selective Muting**: Mute all tabs except the active tab, the first tab that plays sound, or a chosen tab.
+- **Whitelist/Blacklist Modes**: Unmute or mute tabs based on your preferences.
+- **Quick Toggles**: Enable/disable the extension or mute all tabs with hotkeys (`Alt+Shift+S`, `Alt+Shift+M`).
+- **Dynamic UI**: See and select the current sound source.
+- **Icon Feedback**: Extension icon reflects status (enabled, disabled, all muted).
+- **Persistent Settings**: Preferences saved with Chrome `storage.sync`.
 
 ---
 
 ## 🛠️ Installation
 
-1. **Download the Extension**:
-   - Clone the repository: `git clone https://github.com/badrenton/Superior_Tab_Mute.git`
-   - Or download the ZIP file from the [GitHub releases page](https://github.com/le0booba/Superior_Tab_Mute/releases).
+1. **Get the Extension**:
+   - Clone: `git clone https://github.com/badrenton/Superior_Tab_Mute.git`
+   - Or download ZIP from [GitHub Releases](https://github.com/le0booba/Superior_Tab_Mute/releases).
 
 2. **Load in Chrome**:
-   - Open Chrome and navigate to `chrome://extensions/`.
-   - Enable **Developer mode** (toggle in the top-right corner).
-   - Click **Load unpacked** and select the folder containing the extension files.
-   - The extension will appear in your Chrome toolbar.
+   - Go to `chrome://extensions/`
+   - Enable **Developer mode**.
+   - Click **Load unpacked** and select the extension folder.
 
 3. **Verify**:
-   - Click the extension icon to open the popup and confirm it’s installed.
+   - Click the extension icon to open the popup.
 
 ---
 
-## 📖 How to Use
+## 📖 Usage
 
 1. **Open the Popup**:
-   - Click the extension icon in the Chrome toolbar to access the control panel.
-   - Use the **Master Toggle** to enable or disable the extension.
+   - Click the extension icon in the Chrome toolbar.
 
-2. **Select Muting Mode**:
-   - Choose from:
-     - **Mute all except active tab**: Only the currently active tab plays sound.
-     - **Mute all except first tab**: The first tab that plays sound remains unmuted.
-     - **Mute all except a specific tab**: Select a specific tab to unmute (whitelist mode).
+2. **Choose Muting Mode**:
+   - **Active Tab**: Only the current tab plays sound.
+   - **First Tab with Sound**: The first tab that played audio remains unmuted.
+   - **Whitelist**: Select a specific tab to unmute.
 
-3. **Manage Audio**:
-   - Use `Alt+Shift+M` to toggle muting all tabs.
-   - In "first tab with sound" mode, click **Refresh** to set the active tab as the sound source.
-   - In whitelist mode, select a tab from the list to unmute.
+3. **Audio Controls**:
+   - Use `Alt+Shift+M` to mute/unmute all tabs.
+   - In "first tab with sound" mode, use **Refresh** to set the current tab as the source.
+   - In whitelist mode, pick a tab from the list.
 
-4. **Customize Shortcuts**:
-   - Adjust shortcuts via `chrome://extensions/shortcuts`.
+4. **Shortcuts**:
+   - Change shortcuts at `chrome://extensions/shortcuts`.
 
 ---
 
-## ⚙️ Configuration & Options
+## ⚙️ Options
 
-<details>
-<summary>Click to view available options</summary>
-
-- **Master Toggle**: Enable or disable the extension entirely.
-- **Mute All Tabs**: Mute or unmute all tabs with a single toggle.
-- **Muting Modes**:
-  - **Active Tab**: Only the active tab plays sound.
-  - **First Tab with Sound**: The first tab that plays audio remains unmuted.
-  - **Specific Tab (Whitelist)**: Choose a single tab to remain unmuted.
-- **Show All Tabs**: In whitelist or first-sound mode, toggle to display all tabs (not just audible ones).
-- **Shortcuts**:
-  - `Alt+Shift+S`: Toggle extension on/off.
-  - `Alt+Shift+M`: Toggle mute all tabs.
-- **Dynamic Display**: View the current sound source in first-sound mode or select tabs in whitelist mode.
-
-</details>
+- **Master Toggle**: Enable/disable the extension.
+- **Mute All Tabs**: Mute/unmute all tabs at once.
+- **Muting Modes**: Choose between active tab, first-sound, or whitelist.
+- **Show All Tabs**: Optionally display all tabs for selection.
+- **Shortcuts**: 
+  - `Alt+Shift+S`: Toggle extension.
+  - `Alt+Shift+M`: Toggle mute all.
+- **Dynamic Display**: See the current sound source or select tabs.
 
 ---
 
 ## 🔒 Privacy
 
-- **Data Storage**: Settings and tab preferences are stored locally using Chrome’s `storage.sync` API.
-- **No Tracking**: The extension does not collect or transmit any user data.
+- **Data**: Settings are stored locally with `storage.sync`.
+- **No Tracking**: No data is collected or sent.
 - **Permissions**:
-  - `tabs`: To manage tab audio and query tab information.
-  - `storage`: To save user settings and preferences.
+  - `tabs`: Manage tab audio.
+  - `storage`: Save preferences.
 
 ---
 
 ## 🛠️ Troubleshooting
 
-<details>
-<summary>Click to view common issues and solutions</summary>
+- **Not muting?**
+  - Ensure the extension is enabled and the correct mode is selected.
+  - Chrome internal pages (`chrome://`) can't be muted.
 
-- **Extension doesn’t mute tabs**:
-  - Ensure the extension is enabled via the Master Toggle.
-  - Check if the correct muting mode is selected in the popup.
-  - Verify that the page is not a Chrome internal page (`chrome://`), as these are restricted.
+- **Shortcuts not working?**
+  - Check for conflicts at `chrome://extensions/shortcuts`.
 
-- **Shortcuts not working**:
-  - Check for conflicts in `chrome://extensions/shortcuts`.
-  - Reassign shortcuts if necessary.
+- **No tabs in whitelist?**
+  - Enable "Show all tabs" or refresh the popup.
 
-- **No tabs listed in whitelist mode**:
-  - Ensure there are audible tabs or enable the "Show all tabs" option.
-  - Refresh the browser or reopen the popup.
-
-- **Icon not updating**:
-  - Ensure the extension has loaded correctly by reloading it in `chrome://extensions/`.
-  - Check for conflicting extensions affecting the toolbar.
-
-</details>
+- **Icon not updating?**
+  - Reload the extension in `chrome://extensions/`.
 
 ---
 
 ## 📂 File Structure
 
 ```
-Superior_Tab_Mute/
+Superior-Tab-Mute-extension/
 ├── background.js        # Service worker for audio management and event handling
 ├── manifest.json        # Extension configuration
 ├── popup.html           # Popup UI for user controls
@@ -139,5 +119,5 @@ Superior_Tab_Mute/
 <p align="center">
 © 2025 badrenton
 <br>
-<sup>⭐ Enjoying the extension? Consider giving it a star!</sup>
+<sup>⭐ Enjoy the extension? Give it a star!</sup>
 </p>
