@@ -115,8 +115,4 @@ Superior-Tab-Mute-extension/
 
 ---
 
-<div align="center">
-
-######  © 2025 badrenton
-<br><sup>⭐ Enjoy the extension? Give it a star!</sup>
-</div>
+<div align="center"><sup>⭐ Enjoy the extension? Give it a star!</sup></div>
