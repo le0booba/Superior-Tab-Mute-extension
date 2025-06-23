@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             whitelistShowAllCheckbox = document.createElement('label');
             whitelistShowAllCheckbox.style.fontSize = '13px';
             whitelistShowAllCheckbox.style.display = 'block';
-            whitelistShowAllCheckbox.style.marginTop = '8px';
+            whitelistShowAllCheckbox.style.marginTop = '12px';
             whitelistShowAllCheckbox.innerHTML = `<input type="checkbox" id="show-all-tabs-whitelist"> Show all tabs`;
             whitelistSection.append(h4, audibleTabsList, whitelistShowAllCheckbox);
             controlsWrapper.appendChild(whitelistSection);

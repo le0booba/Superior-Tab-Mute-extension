@@ -97,7 +97,7 @@ input:checked + .slider:before { transform: translateX(18px); }
 
 #controls-wrapper.disabled { opacity: 0.5; pointer-events: none; }
 
-#controls-wrapper { border-top: 1px solid #34495e; padding-top: 12px; }
+#controls-wrapper { border-top: 1px solid #34495e; padding-top: 20px; }
 
 form label { display: block; margin-bottom: 8px; cursor: pointer; }
 input[type="radio"] { margin-right: 8px; vertical-align: middle; accent-color: #3498db; }
@@ -120,7 +120,7 @@ input[type="radio"] { margin-right: 8px; vertical-align: middle; accent-color: #
 #refresh-first-sound-btn:hover { background: #5a8ac6; }
 
 #current-sound-source-display {
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 8px 10px;
     background: #34495e;
     border-radius: 4px;
@@ -144,4 +144,21 @@ h4 { margin-top: 12px; padding-bottom: 6px; margin-bottom: 10px; }
 
 .header + div[style] {
     height: 8px;
+}
+
+#whitelist-section label[for="show-all-tabs-whitelist"] {
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+label[for="show-all-tabs-first-sound"] {
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+/* Align checkbox with text */
+input#show-all-tabs-whitelist,
+input#show-all-tabs-first-sound {
+    vertical-align: middle;
+    margin-right: 8px;
 }
