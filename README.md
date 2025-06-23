@@ -94,7 +94,7 @@ A Chrome extension for advanced tab audio control: mute all tabs except the acti
 ## 📂 File Structure
 
 ```
-Superior-Tab-Mute-extension/
+Superior_Tab_Mute-extension/
 ├── background.js        # Service worker for audio management and event handling
 ├── manifest.json        # Extension configuration
 ├── popup.html           # Popup UI for user controls
