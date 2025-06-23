@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             whitelistShowAllCheckbox = document.createElement('label');
             whitelistShowAllCheckbox.style.fontSize = '13px';
             whitelistShowAllCheckbox.style.display = 'block';
-            whitelistShowAllCheckbox.style.marginTop = '8px'; // Добавлен отступ сверху
+            whitelistShowAllCheckbox.style.marginTop = '8px';
             whitelistShowAllCheckbox.innerHTML = `<input type="checkbox" id="show-all-tabs-whitelist"> Show all tabs`;
             whitelistSection.append(h4, audibleTabsList, whitelistShowAllCheckbox);
             controlsWrapper.appendChild(whitelistSection);
@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!list) {
             list = document.createElement('ul');
             list.id = 'first-sound-tabs-list';
-            // Стилизация списка вкладок как в whitelist
             list.style.marginTop = '8px';
             list.style.listStyle = 'none';
             list.style.padding = '0';
@@ -110,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.textContent = tab.title;
             li.dataset.tabId = tab.id;
-            // Стилизация элементов списка как в whitelist
             li.style.padding = '8px 12px';
             li.style.cursor = 'pointer';
             li.style.whiteSpace = 'nowrap';

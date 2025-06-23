@@ -1,4 +1,3 @@
-// --- INITIALIZATION ---
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({
         mode: 'active',
@@ -8,7 +7,6 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 });
 
-// --- HELPERS ---
 const getSettings = () => chrome.storage.sync.get({
     mode: 'active',
     firstAudibleTabId: null,
@@ -24,7 +22,6 @@ const getTabs = q => chrome.tabs.query(q);
 async function unmuteAllTabs() { await setMute(await getTabs({}), false); }
 async function muteAllTabs() { await setMute(await getTabs({}), true); }
 
-// --- CORE LOGIC ---
 async function applyMutingRules() {
     const s = await getSettings();
     if (!s.isExtensionEnabled) return unmuteAllTabs();
@@ -54,7 +51,6 @@ async function applyMutingRules() {
     }
 }
 
-// --- EVENTS ---
 chrome.tabs.onActivated.addListener(applyMutingRules);
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
     if (changeInfo.audible === true) {
@@ -98,7 +94,6 @@ chrome.tabs.onRemoved.addListener(async (tabId) => {
 });
 chrome.storage.onChanged.addListener(applyMutingRules);
 
-// --- ICON ---
 function updateExtensionIcon(isEnabled, isAllMuted) {
     let path;
     if (!isEnabled) {
@@ -135,7 +130,6 @@ chrome.storage.onChanged.addListener((changes, area) => {
     }
 });
 
-// --- HOTKEYS ---
 chrome.commands && chrome.commands.onCommand.addListener(async (command) => {
     if (command === 'toggle-extension') {
         const { isExtensionEnabled } = await chrome.storage.sync.get('isExtensionEnabled');
