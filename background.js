@@ -35,17 +35,18 @@ async function applyMutingRules() {
         case 'active':
             tabToUnmuteId = activeTab && activeTab.id;
             break;
-        case 'first-sound': {
+        case 'first-sound':
             const { firstAudibleTabId } = s;
             const tabExists = allTabs.some(t => t.id === firstAudibleTabId);
             if (firstAudibleTabId && tabExists) {
                 tabToUnmuteId = firstAudibleTabId;
-            } else if (activeTab) {
-                tabToUnmuteId = activeTab.id;
+            } else if (activeTab && activeTab.audible) {
                 await chrome.storage.sync.set({ firstAudibleTabId: activeTab.id });
+                tabToUnmuteId = activeTab.id;
+            } else {
+                // Не устанавливаем tabToUnmuteId, все вкладки будут заглушены
             }
             break;
-        }
         case 'whitelist':
             tabToUnmuteId = s.whitelistedTabId;
             break;
@@ -70,49 +71,20 @@ async function applyMutingRules() {
 
 chrome.tabs.onActivated.addListener(applyMutingRules);
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-    if ('audible' in changeInfo) {
-        if (changeInfo.audible === true) {
-            const { mode, firstAudibleTabId, isExtensionEnabled } = await chrome.storage.sync.get(['mode', 'firstAudibleTabId', 'isExtensionEnabled']);
-            if (isExtensionEnabled && mode === 'first-sound' && !firstAudibleTabId) {
-                await chrome.storage.sync.set({ firstAudibleTabId: tabId });
-            }
-        }
-        applyMutingRules();
-    }
-    if ('active' in changeInfo && changeInfo.active === true) {
+    if ('audible' in changeInfo || 'active' in changeInfo) {
         applyMutingRules();
     }
 });
 chrome.tabs.onRemoved.addListener(async (tabId) => {
     const s = await chrome.storage.sync.get(['mode', 'firstAudibleTabId', 'whitelistedTabId', 'blacklistedTabId', 'isExtensionEnabled']);
     if (!s.isExtensionEnabled) return;
-    const allTabs = await getTabs({});
-    const audibleTabs = allTabs.filter(t => t.audible);
-    const [activeTab] = allTabs.filter(t => t.active && t.windowId === chrome.windows.WINDOW_ID_CURRENT);
 
     if (s.mode === 'first-sound' && tabId === s.firstAudibleTabId) {
         await chrome.storage.sync.remove('firstAudibleTabId');
-        if (audibleTabs.length) {
-            await chrome.tabs.update(audibleTabs[0].id, { muted: false });
-            await chrome.storage.sync.set({ firstAudibleTabId: audibleTabs[0].id });
-        } else if (activeTab) {
-            await chrome.tabs.update(activeTab.id, { muted: false });
-            await chrome.storage.sync.set({ firstAudibleTabId: activeTab.id });
-        }
     } else if (s.mode === 'whitelist' && tabId === s.whitelistedTabId) {
         await chrome.storage.sync.remove('whitelistedTabId');
-        if (audibleTabs.length) {
-            await chrome.tabs.update(audibleTabs[0].id, { muted: false });
-            await chrome.storage.sync.set({ whitelistedTabId: audibleTabs[0].id });
-        } else if (activeTab) {
-            await chrome.tabs.update(activeTab.id, { muted: false });
-        }
     } else if (s.mode === 'blacklist' && tabId === s.blacklistedTabId) {
         await chrome.storage.sync.remove('blacklistedTabId');
-        if (audibleTabs.length) {
-            await chrome.tabs.update(audibleTabs[0].id, { muted: true });
-            await chrome.storage.sync.set({ blacklistedTabId: audibleTabs[0].id });
-        }
     }
     applyMutingRules();
 });
